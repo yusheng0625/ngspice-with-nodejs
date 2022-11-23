@@ -1,0 +1,17 @@
+AC Sine Wave
+* 15 volt, 60hz AC source with rc load
+v1 1 0 sin(0 15 60 0 0)
+rsrc 1 2 100
+cload 2 0 1u
+rload 2 0 10k
+
+* control commands
+.control
+
+* run for 20ms
+alter @cload[ic]=15
+tran 0.02ms 0.20ms uic
+print v(1) v(2) 
+print v1#branch[9999999]
+.endc
+.end 

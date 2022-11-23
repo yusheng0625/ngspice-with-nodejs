@@ -1,0 +1,16 @@
+RC Circuit Transient Response
+vin 1 0 5v
+r1 1 2 1k
+c1 2 0 1u
+
+*control commands
+.control
+
+* run each one for 20ms
+
+alter @c1[ic]=0
+tran 0.02ms 0.5ms uic
+print v(1)[999999] v(2)[999999]
+
+.endc
+.end

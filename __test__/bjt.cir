@@ -1,0 +1,19 @@
+Common-base BJT amplifier 
+vsupply 1 0 dc 24
+vin 0 4 dc
+rc 1 2 800 
+re 3 4 100 
+q1 2 0 3 mod1
+
+* define the BJT models
+.model mod1 npn bf=50 
+
+* control commands
+.control
+
+* run for 20ms
+tran 0.02ms 0.20ms uic
+print v(1) v(2) v(3) v(4)
+
+.endc
+.end 

@@ -1,0 +1,14 @@
+Voltage Divider Circuit
+v1 a 0 60V
+r1 a b 20
+r2 b 0 10
+
+* control commands
+.control
+
+* run for 20ms
+tran 0.02ms 0.20ms uic
+print v(a)[99999] v(b)[99999]
+
+.endc
+.end

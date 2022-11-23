@@ -1,0 +1,16 @@
+Multiple dc sources
+v1 1 0 dc 24 
+v2 3 0 dc 15 
+r1 1 2 10k 
+r2 2 3 8.1k 
+r3 2 0 4.7k 
+
+* control commands
+.control
+
+* run for 20ms
+tran 0.02ms 0.20ms uic
+print v(1)[99999] v(2)[99999] v(3)[99999]
+
+.endc
+.end 

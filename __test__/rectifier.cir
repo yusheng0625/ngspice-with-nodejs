@@ -1,0 +1,20 @@
+Fullwave bridge rectifier 
+v1 1 0 sin(0 15 60 0 0) 
+rload 2 3 10k
+d1 1 2 mod1 
+d2 0 2 mod1 
+d3 3 1 mod1 
+d4 3 0 mod1
+
+* define the diode models
+.model mod1 d
+
+* control commands
+.control
+
+* run for 20ms
+tran 0.1ms 16.7ms uic
+plot v(1) v(2, 3)
+
+.endc
+.end 

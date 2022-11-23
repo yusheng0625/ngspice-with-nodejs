@@ -1,0 +1,19 @@
+Lowpass filter 
+v1 2 1 sin(0 24 60 0 0)
+v2 1 0 dc 24 
+
+l1 2 3 100m 
+l2 3 4 250m 
+c1 3 0 100u 
+
+rload 4 0 1k 
+
+* control commands
+.control
+
+* run for 20ms
+alter @c1[ic]=10
+tran 0.02ms 0.20ms uic
+print v(1) v(2) v(3) v(4)
+.endc
+.end 
